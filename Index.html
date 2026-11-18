@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GILIMO FX</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;background:#080d18;color:white;
+ font-family:Arial,sans-serif;padding:18px;
+}
+header{text-align:center;padding:20px}
+h1{color:#19d69b;font-size:30px}
+.subtitle{color:#9ba8bb}
+.card{
+ background:#141e30;border:1px solid #29364d;
+ border-radius:14px;padding:18px;margin:15px 0;
+}
+h2{font-size:19px}
+.price{font-size:27px;font-weight:bold}
+.green{color:#19d69b}
+.red{color:#ff647c}
+button{
+ background:#12bd88;color:#07151a;border:0;
+ padding:14px;border-radius:9px;font-weight:bold;
+ width:100%;font-size:16px;margin-top:12px;
+}
+select{
+ width:100%;padding:13px;background:#080d18;
+ color:white;border:1px solid #39465b;border-radius:8px;
+}
+footer{text-align:center;color:#8290a5;padding:25px;font-size:12px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>GILIMO FX</h1>
+<p class="subtitle">SMART FOREX TRADING DASHBOARD</p>
+<p class="green">● Dashboard Online</p>
+</header>
+
+<div class="card">
+<h2>Market Overview</h2>
+<p class="subtitle">Select currency pair</p>
+<select id="pair">
+<option>EUR/USD</option>
+<option>GBP/USD</option>
+<option>USD/JPY</option>
+<option>USD/CHF</option>
+<option>AUD/USD</option>
+<option>USD/CAD</option>
+</select>
+</div>
+
+<div class="card">
+<h2>Trading Analysis</h2>
+<p class="subtitle">Selected pair</p>
+<div class="price" id="selected">EUR/USD</div>
+<p>Market status: <span class="green">DEMO MODE</span></p>
+<p>Signal: <strong id="signal">WAIT</strong></p>
+<p>Risk level: <strong>Manage your risk</strong></p>
+<button onclick="analyse()">Analyse Market</button>
+</div>
+
+<div class="card">
+<h2>Trading Tools</h2>
+<p>Market direction: <strong id="direction">Waiting for analysis</strong></p>
+<p>Entry price: <strong id="entry">--</strong></p>
+<p>Stop loss: <strong id="stop">--</strong></p>
+<p>Take profit: <strong id="target">--</strong></p>
+<p class="subtitle">Demo calculations only. Not live market data or trading instructions.</p>
+</div>
+
+<div class="card">
+<h2>Risk Management</h2>
+<p>Suggested maximum risk per trade: 1%</p>
+<p>Always use a stop loss.</p>
+<p>Avoid trading with money you cannot afford to lose.</p>
+</div>
+
+<footer>
+GILIMO FX © 2026<br>
+Forex analysis dashboard
+</footer>
+
+<script>
+const pair=document.getElementById("pair");
+pair.onchange=()=>{
+ document.getElementById("selected").textContent=pair.value;
+};
+
+function analyse(){
+ document.getElementById("signal").textContent="WAIT";
+ document.getElementById("signal").className="green";
+ document.getElementById("direction").textContent="No confirmed setup";
+ document.getElementById("entry").textContent="--";
+ document.getElementById("stop").textContent="--";
+ document.getElementById("target").textContent="--";
+ alert("Demo analysis complete. Connect a real market data source for live analysis.");
+}
+</script>
+</body>
+                    </html>
+                    
